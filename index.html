@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qiratul Quran — Read, Listen, Reflect</title>
+<meta name="description" content="A clean, authentic way to read, listen to, and reflect on the Holy Quran — with translations, audio, and bookmarks.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">۞</span>
+      <span class="brand-name">Qiratul Quran</span>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Switch between light and dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.55 1.55M18.25 18.25l1.55 1.55M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.55-1.55M18.25 5.75l1.55-1.55"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 14.2A8.5 8.5 0 1 1 9.8 4a6.8 6.8 0 0 0 10.2 10.2Z"/></svg>
+    </button>
+  </header>
+
+  <main class="content">
+
+    <!-- Hero -->
+    <section class="hero">
+      <p class="hero-bismillah" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+      <h1 class="hero-title">Read. Listen. Reflect.</h1>
+      <p class="hero-sub">The Holy Quran, with trusted translations and recitation — wherever you are.</p>
+    </section>
+
+    <!-- Continue reading -->
+    <section class="panel continue-panel" aria-label="Continue reading">
+      <div class="panel-label">Continue Reading</div>
+      <div class="continue-row">
+        <div class="continue-info">
+          <span class="continue-surah">Al-Baqarah</span>
+          <span class="continue-ayah">Ayah 5 of 286</span>
+        </div>
+        <a class="btn btn-primary" href="#">Continue</a>
+      </div>
+      <div class="progress-track" aria-hidden="true">
+        <div class="progress-fill" style="width: 2%;"></div>
+      </div>
+    </section>
+
+    <!-- Daily Ayah -->
+    <section class="panel ayah-panel" aria-label="Ayah of the day">
+      <div class="panel-label">Ayah of the Day</div>
+      <div class="ayah-placeholder">
+        <p>Your daily Ayah will appear here, in Arabic with its translation, once connected to a verified Quran source.</p>
+      </div>
+    </section>
+
+    <!-- Quick access -->
+    <section class="quick-access" aria-label="Quick access">
+      <a class="quick-item" href="#">
+        <span class="quick-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11a2 2 0 0 1 2 2v14a1.5 1.5 0 0 0-1.5-1.5H4z"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H13a2 2 0 0 0-2 2v14a1.5 1.5 0 0 1 1.5-1.5H20z"/></svg>
+        </span>
+        <span class="quick-label">Quran</span>
+      </a>
+      <a class="quick-item" href="#">
+        <span class="quick-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3.5h9a1.5 1.5 0 0 1 1.5 1.5v16l-6-4-6 4V5A1.5 1.5 0 0 1 6 3.5Z"/></svg>
+        </span>
+        <span class="quick-label">Bookmarks</span>
+      </a>
+      <a class="quick-item" href="#">
+        <span class="quick-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.6-9.5-9.1C.7 8.6 2.3 5 6 5c2 0 3.4 1.1 4 2.2C10.6 6.1 12 5 14 5c3.7 0 5.3 3.6 3.5 6.9C19 16.4 12 21 12 21Z"/></svg>
+        </span>
+        <span class="quick-label">Duas</span>
+      </a>
+      <a class="quick-item" href="#">
+        <span class="quick-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M9.7 8.3v7.4l6-3.7-6-3.7Z"/></svg>
+        </span>
+        <span class="quick-label">Audio</span>
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Bottom nav (mobile) -->
+  <nav class="bottom-nav" aria-label="Primary">
+    <a class="nav-item is-active" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9.5h12V10"/></svg>
+      <span>Home</span>
+    </a>
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11a2 2 0 0 1 2 2v14a1.5 1.5 0 0 0-1.5-1.5H4z"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H13a2 2 0 0 0-2 2v14a1.5 1.5 0 0 1 1.5-1.5H20z"/></svg>
+      <span>Quran</span>
+    </a>
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <span>Search</span>
+    </a>
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3.5h9a1.5 1.5 0 0 1 1.5 1.5v16l-6-4-6 4V5A1.5 1.5 0 0 1 6 3.5Z"/></svg>
+      <span>Saved</span>
+    </a>
+    <a class="nav-item" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c1-3.5 4-5.3 7-5.3S18 16.5 19 20"/></svg>
+      <span>Account</span>
+    </a>
+  </nav>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
