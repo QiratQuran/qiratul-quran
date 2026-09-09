@@ -24,7 +24,7 @@
       const typeLabel = s.revelationType === 'Meccan' ? 'Makki' : 'Madani';
       return (
         '<li class="item-row">' +
-          '<a class="item-link" href="#">' +
+          '<a class="item-link" href="surah.html?surah=' + s.number + '">' +
             '<span class="item-number">' + s.number + '</span>' +
             '<span class="item-main">' +
               '<span class="item-title">' + s.englishName + '</span>' +

@@ -507,6 +507,394 @@ a {
 }
 
 /* ==========================================================================
+   Topbar actions / icon buttons
+   ========================================================================== */
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+[data-theme="dark"] .icon-btn { color: var(--gold); }
+.icon-btn svg { width: 18px; height: 18px; }
+
+/* ==========================================================================
+   Font size popover
+   ========================================================================== */
+.font-popover {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 20px;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.font-popover[hidden] { display: none; }
+.font-popover:not([hidden]) { display: flex; }
+
+.font-popover label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+/* ==========================================================================
+   Quran Reader
+   ========================================================================== */
+.reader-content { padding-bottom: 120px; }
+
+.surah-header {
+  text-align: center;
+  padding: 20px 0 28px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+
+.surah-header-arabic {
+  font-family: var(--font-arabic);
+  font-size: 32px;
+  margin: 0 0 6px;
+  color: var(--ink);
+}
+
+.surah-header-meta {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin: 0 0 20px;
+}
+
+.surah-header .hero-bismillah {
+  font-size: 26px;
+  margin: 0;
+}
+
+.ayah-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ayah-item {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.4s ease;
+}
+
+.ayah-item.is-highlighted,
+.ayah-item.is-playing {
+  background: var(--gold-soft);
+  border-radius: var(--radius-sm);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.ayah-arabic {
+  font-family: var(--font-arabic);
+  font-size: var(--reader-arabic-size, 28px);
+  line-height: 2.1;
+  text-align: right;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+
+.ayah-number-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.ayah-translation {
+  font-size: var(--reader-translation-size, 16px);
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin: 0 0 14px;
+}
+
+.ayah-actions {
+  display: flex;
+  gap: 18px;
+}
+
+.ayah-action-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.ayah-action-btn svg { width: 18px; height: 18px; }
+
+.ayah-action-btn.is-active,
+.ayah-action-btn.bookmark-btn.is-active { color: var(--gold); }
+
+.ayah-action-btn.is-flashed { color: var(--primary); }
+[data-theme="dark"] .ayah-action-btn.is-flashed { color: var(--gold); }
+
+/* Audio bar */
+.audio-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: 14px 20px calc(14px + env(safe-area-inset-bottom));
+  background: var(--bg-elevated);
+  border-top: 1px solid var(--border);
+  z-index: 10;
+}
+
+.audio-bar[hidden] { display: none; }
+.audio-bar:not([hidden]) { display: flex; }
+
+.audio-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  display: flex;
+}
+
+[data-theme="dark"] .audio-btn { color: var(--gold); }
+.audio-btn svg { width: 22px; height: 22px; }
+
+.audio-btn-play {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--bg-elevated);
+  align-items: center;
+  justify-content: center;
+}
+
+[data-theme="dark"] .audio-btn-play { background: var(--gold); color: #14100A; }
+.audio-btn-play svg { width: 20px; height: 20px; }
+
+.audio-label {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  min-width: 60px;
+}
+
+/* ==========================================================================
+   Daily ayah (home)
+   ========================================================================== */
+.daily-ayah-arabic {
+  font-family: var(--font-arabic);
+  font-size: 24px;
+  text-align: right;
+  line-height: 1.9;
+  color: var(--ink);
+  margin: 0 0 12px;
+}
+
+.daily-ayah-translation {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0 0 8px;
+}
+
+.daily-ayah-ref {
+  font-size: 12px;
+  color: var(--gold);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Duas page
+   ========================================================================== */
+.page-intro {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0 0 22px;
+}
+
+.dua-category-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.dua-category-grid[hidden] { display: none; }
+.dua-category-grid:not([hidden]) { display: grid; }
+
+.dua-category-card {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius-sm);
+  padding: 18px 16px;
+  background: var(--bg-elevated);
+}
+
+.dua-category-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.dua-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dua-item {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.dua-arabic {
+  font-family: var(--font-arabic);
+  font-size: 22px;
+  text-align: right;
+  line-height: 2;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+
+.dua-translation {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Bookmarks page extras
+   ========================================================================== */
+.item-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.item-row .item-link { flex: 1; }
+
+.remove-bookmark-btn {
+  background: none;
+  border: none;
+  color: var(--ink-soft);
+  padding: 8px;
+  cursor: pointer;
+}
+
+.remove-bookmark-btn svg { width: 16px; height: 16px; }
+
+/* ==========================================================================
+   Settings page
+   ========================================================================== */
+.settings-section {
+  margin-bottom: 30px;
+}
+
+.settings-heading {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0 0 14px;
+}
+
+[data-theme="dark"] .settings-heading { color: var(--gold); }
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14.5px;
+}
+
+.settings-row-stack {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.settings-row-stack label {
+  font-size: 14.5px;
+  color: var(--ink);
+}
+
+.settings-text {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.segmented {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.segmented button {
+  background: var(--bg-elevated);
+  border: none;
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.segmented button.is-active {
+  background: var(--primary);
+  color: var(--bg-elevated);
+}
+
+[data-theme="dark"] .segmented button.is-active {
+  background: var(--gold);
+  color: #14100A;
+}
+
+.select-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+
+/* ==========================================================================
    Tablet and up
    ========================================================================== */
 @media (min-width: 700px) {

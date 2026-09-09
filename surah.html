@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quran Reader | Qiratul Quran</title>
+<meta name="description" content="Read the Holy Quran in Arabic with English and Urdu translation and audio recitation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="brand">
+      <a href="quran.html" class="back-link" aria-label="Back to Quran list">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 6l-6 6 6 6"/></svg>
+      </a>
+      <span class="brand-name" id="surahTitle">Loading…</span>
+    </div>
+    <div class="topbar-actions">
+      <button class="icon-btn" id="fontSizeBtn" aria-label="Adjust text size">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19h4M6 19V7l4 12M6 11h4M14 19l3.5-9 3.5 9M14.8 16.5h5.4"/></svg>
+      </button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch between light and dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.55 1.55M18.25 18.25l1.55 1.55M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.55-1.55M18.25 5.75l1.55-1.55"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 14.2A8.5 8.5 0 1 1 9.8 4a6.8 6.8 0 0 0 10.2 10.2Z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Font size popover -->
+  <div class="font-popover" id="fontPopover" hidden>
+    <label>
+      Arabic text size
+      <input type="range" id="arabicSizeSlider" min="20" max="44" step="2">
+    </label>
+    <label>
+      Translation text size
+      <input type="range" id="translationSizeSlider" min="13" max="24" step="1">
+    </label>
+  </div>
+
+  <main class="content reader-content">
+
+    <!-- Loading -->
+    <div id="loadingState" class="state-message">Loading Surah…</div>
+
+    <!-- Error -->
+    <div id="errorState" class="state-message" hidden>
+      Couldn't load this Surah right now. Please check your connection and
+      <button id="retryBtn" class="link-btn">try again</button>.
+    </div>
+
+    <!-- Surah header -->
+    <div id="surahHeader" class="surah-header" hidden>
+      <p class="surah-header-arabic" id="surahArabicName" lang="ar" dir="rtl"></p>
+      <p class="surah-header-meta" id="surahMeta"></p>
+      <p class="hero-bismillah" id="bismillah" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+    </div>
+
+    <!-- Ayah list -->
+    <ul id="ayahList" class="ayah-list" hidden></ul>
+
+  </main>
+
+  <!-- Audio player bar -->
+  <div class="audio-bar" id="audioBar" hidden>
+    <button class="audio-btn" id="prevAyahBtn" aria-label="Previous Ayah">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 5l-7 7 7 7M8 5v14"/></svg>
+    </button>
+    <button class="audio-btn audio-btn-play" id="playPauseBtn" aria-label="Play or pause">
+      <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" hidden><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg>
+    </button>
+    <button class="audio-btn" id="nextAyahBtn" aria-label="Next Ayah">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 5l7 7-7 7M16 5v14"/></svg>
+    </button>
+    <span class="audio-label" id="audioLabel">Ayah 1</span>
+  </div>
+
+  <audio id="audioPlayer"></audio>
+
+</div>
+
+<script src="script.js"></script>
+<script src="surah.js"></script>
+</body>
+</html>
