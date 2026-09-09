@@ -263,7 +263,7 @@ a {
    ========================================================================== */
 .quick-access {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   margin-top: 26px;
 }
@@ -598,6 +598,18 @@ a {
   margin: 0;
 }
 
+.source-label {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  margin: 14px 0 0;
+  text-align: center;
+}
+
+.reader-content > .source-label {
+  text-align: left;
+  margin: 0 0 16px;
+}
+
 .ayah-list {
   list-style: none;
   margin: 0;
@@ -922,6 +934,141 @@ a {
   font-family: var(--font-body);
   font-size: 14px;
 }
+
+/* ==========================================================================
+   Tajweed lesson book
+   ========================================================================== */
+.lesson-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.lesson-title {
+  padding: 16px 18px;
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--primary);
+  cursor: pointer;
+  list-style: none;
+  background: var(--bg-elevated);
+}
+
+.lesson-title::-webkit-details-marker { display: none; }
+[data-theme="dark"] .lesson-title { color: var(--gold); }
+
+.lesson-body {
+  padding: 4px 18px 20px;
+}
+
+.lesson-intro {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 0 0 16px;
+}
+
+.tajweed-rule-card {
+  border-top: 1px solid var(--border);
+  padding: 14px 0;
+}
+
+.tajweed-rule-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.tajweed-rule-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.tajweed-rule-letters {
+  font-family: var(--font-arabic);
+  font-size: 19px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.tajweed-rule-desc {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.quiz-block {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border);
+}
+
+.quiz-heading {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+  margin: 0 0 12px;
+}
+
+.quiz-question {
+  margin-bottom: 18px;
+}
+
+.quiz-prompt {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quiz-option {
+  text-align: left;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  cursor: pointer;
+}
+
+.quiz-option:disabled { cursor: default; }
+
+.quiz-option.is-correct {
+  border-color: #3FA382;
+  background: var(--primary-soft);
+  font-weight: 600;
+}
+
+.quiz-option.is-incorrect {
+  border-color: #DD0008;
+  background: rgba(221, 0, 8, 0.08);
+}
+
+.quiz-feedback {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin: 10px 0 0;
+  line-height: 1.5;
+}
+
+.quiz-feedback.is-correct-text { color: var(--primary); }
+[data-theme="dark"] .quiz-feedback.is-correct-text { color: var(--gold); }
 
 /* ==========================================================================
    Tajweed color coding (verified rule colors from AlQuran Cloud)

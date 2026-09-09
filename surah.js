@@ -44,7 +44,7 @@
   let currentAyahIndex = 0;
   let isPlaying = false;
   let surahData = null;
-  let tajweedOn = localStorage.getItem('qq-tajweed-on') === 'true';
+  let tajweedOn = localStorage.getItem('qq-tajweed-on') !== 'false';
 
   function escapeHtml(str) {
     const div = document.createElement('div');
@@ -121,6 +121,8 @@
         surahMeta.textContent =
           (arabicData.revelationType === 'Meccan' ? 'Makki' : 'Madani') +
           ' · ' + arabicData.numberOfAyahs + ' Ayahs';
+        document.getElementById('translationSource').textContent =
+          'Translation: ' + translationData.englishName + ' · Recitation: ' + audioData.englishName;
 
         // Surah 9 (At-Tawbah) traditionally has no opening Bismillah
         bismillah.style.display = (surahNumber === 9) ? 'none' : '';

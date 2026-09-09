@@ -38,7 +38,7 @@
   let ayahs = [];
   let currentAyahIndex = 0;
   let isPlaying = false;
-  let tajweedOn = localStorage.getItem('qq-tajweed-on') === 'true';
+  let tajweedOn = localStorage.getItem('qq-tajweed-on') !== 'false';
 
   function escapeHtml(str) {
     const div = document.createElement('div');
@@ -110,6 +110,9 @@
         const audioData = editions[3];
 
         juzTitle.textContent = 'Juz ' + juzNumber;
+        const sourceLabel = document.getElementById('translationSource');
+        sourceLabel.textContent = 'Translation: ' + translationData.englishName + ' · Recitation: ' + audioData.englishName;
+        sourceLabel.hidden = false;
 
         ayahs = arabicData.ayahs.map(function (a, i) {
           return {
