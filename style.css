@@ -531,6 +531,18 @@ a {
 [data-theme="dark"] .icon-btn { color: var(--gold); }
 .icon-btn svg { width: 18px; height: 18px; }
 
+.icon-btn.is-active {
+  background: var(--primary);
+  color: var(--bg-elevated);
+  border-color: var(--primary);
+}
+
+[data-theme="dark"] .icon-btn.is-active {
+  background: var(--gold);
+  color: #14100A;
+  border-color: var(--gold);
+}
+
 /* ==========================================================================
    Font size popover
    ========================================================================== */
@@ -591,6 +603,23 @@ a {
   margin: 0;
   padding: 0;
 }
+
+.surah-divider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 14px;
+  margin: 10px 0;
+  background: var(--gold-soft);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--primary);
+}
+
+[data-theme="dark"] .surah-divider { color: var(--gold); }
+.surah-divider span:last-child { font-family: var(--font-arabic); font-size: 18px; }
 
 .ayah-item {
   padding: 22px 0;
@@ -892,6 +921,62 @@ a {
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 14px;
+}
+
+/* ==========================================================================
+   Tajweed color coding (verified rule colors from AlQuran Cloud)
+   ========================================================================== */
+.tw-h, .tw-s, .tw-l { color: #9C9C9C; }
+.tw-n { color: #537FFF; }
+.tw-p { color: #4050FF; }
+.tw-m { color: #000EBC; }
+.tw-q { color: #DD0008; }
+.tw-o { color: #2144C1; }
+.tw-c { color: #D500B7; }
+.tw-f { color: #9400A8; }
+.tw-w { color: #58B800; }
+.tw-i { color: #26BFFD; }
+.tw-a { color: #169777; }
+.tw-u { color: #169200; }
+.tw-d, .tw-b { color: #A1A1A1; }
+.tw-g { color: #FF7E1E; }
+
+.tajweed-legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tajweed-legend-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.tajweed-swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.tajweed-legend-text { flex: 1; }
+
+.tajweed-legend-name {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 3px;
+}
+
+.tajweed-legend-desc {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin: 0;
 }
 
 /* ==========================================================================

@@ -42,7 +42,7 @@
     for (let i = 1; i <= 30; i++) {
       html +=
         '<li class="item-row">' +
-          '<a class="item-link" href="#">' +
+          '<a class="item-link" href="juz.html?juz=' + i + '">' +
             '<span class="item-number">' + i + '</span>' +
             '<span class="item-main">' +
               '<span class="item-title">Juz ' + i + '</span>' +

@@ -107,5 +107,38 @@
       localStorage.setItem('qq-translation-lang', lang);
     }
   };
+  /* ---------------------------------------------------------
+     Tajweed parser — converts AlQuran Cloud's "quran-tajweed"
+     edition markup into color-coded HTML spans. Rule codes and
+     colors follow the standard mapping used by AlQuran Cloud's
+     own parser libraries (see alquran.cloud/tajweed-guide).
+  --------------------------------------------------------- */
+  window.QQTajweed = {
+    rules: {
+      h: { name: 'Hamzat ul Wasl', desc: 'A connecting hamza that is dropped in continuous recitation.' },
+      s: { name: 'Silent', desc: 'A letter that is written but not pronounced.' },
+      l: { name: 'Lam Shamsiyyah', desc: 'A silent "laam" before a sun letter, which is instead doubled into the following letter.' },
+      n: { name: 'Normal Prolongation', desc: 'Madd of 2 vowel counts (harakat).' },
+      p: { name: 'Permissible Prolongation', desc: 'Madd of 2, 4, or 6 vowel counts, reciter\u2019s choice.' },
+      m: { name: 'Necessary Prolongation', desc: 'Madd of 6 vowel counts.' },
+      q: { name: 'Qalqalah', desc: 'A slight bounce/echo added to certain letters when they carry a sukoon.' },
+      o: { name: 'Obligatory Prolongation', desc: 'Madd of 4 to 5 vowel counts.' },
+      c: { name: 'Ikhfa Shafawi', desc: 'Concealment of a silent meem before the letter baa.' },
+      f: { name: 'Ikhfa', desc: 'Concealment of noon sakinah or tanween before certain letters.' },
+      w: { name: 'Idgham Shafawi', desc: 'Merging a silent meem into a following meem.' },
+      i: { name: 'Iqlab', desc: 'Converting noon sakinah or tanween into a meem sound before baa.' },
+      a: { name: 'Idgham (with Ghunnah)', desc: 'Merging noon sakinah or tanween into a following letter, with a nasal sound.' },
+      u: { name: 'Idgham (without Ghunnah)', desc: 'Merging noon sakinah or tanween into a following letter, without a nasal sound.' },
+      d: { name: 'Idgham Mutajanisayn', desc: 'Merging two letters that share the same articulation point.' },
+      b: { name: 'Idgham Mutaqaribayn', desc: 'Merging two letters with close articulation points.' },
+      g: { name: 'Ghunnah', desc: 'A nasal sound held for 2 vowel counts on meem or noon with shaddah.' }
+    },
+    render: function (text) {
+      if (!text) return '';
+      return text.replace(/\[(\w+)(?::\d+)?\[([^\]]+)\]/g, function (match, code, content) {
+        return '<span class="tw-' + code + '">' + content + '</span>';
+      });
+    }
+  };
 })();
 

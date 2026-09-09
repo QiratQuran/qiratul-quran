@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quran Reader | Qiratul Quran</title>
-<meta name="description" content="Read the Holy Quran in Arabic with English and Urdu translation and audio recitation.">
+<title>Juz Reader | Qiratul Quran</title>
+<meta name="description" content="Read the Holy Quran by Juz, in Arabic with translation and audio.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,13 +14,12 @@
 
 <div class="app-shell">
 
-  <!-- Top bar -->
   <header class="topbar">
     <div class="brand">
       <a href="quran.html" class="back-link" aria-label="Back to Quran list">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 6l-6 6 6 6"/></svg>
       </a>
-      <span class="brand-name" id="surahTitle">Loading…</span>
+      <span class="brand-name" id="juzTitle">Loading…</span>
     </div>
     <div class="topbar-actions">
       <button class="icon-btn" id="tajweedBtn" aria-label="Toggle Tajweed coloring">
@@ -36,7 +35,6 @@
     </div>
   </header>
 
-  <!-- Font size popover -->
   <div class="font-popover" id="fontPopover" hidden>
     <label>
       Arabic text size
@@ -51,28 +49,17 @@
 
   <main class="content reader-content">
 
-    <!-- Loading -->
-    <div id="loadingState" class="state-message">Loading Surah…</div>
+    <div id="loadingState" class="state-message">Loading Juz…</div>
 
-    <!-- Error -->
     <div id="errorState" class="state-message" hidden>
-      Couldn't load this Surah right now. Please check your connection and
+      Couldn't load this Juz right now. Please check your connection and
       <button id="retryBtn" class="link-btn">try again</button>.
     </div>
 
-    <!-- Surah header -->
-    <div id="surahHeader" class="surah-header" hidden>
-      <p class="surah-header-arabic" id="surahArabicName" lang="ar" dir="rtl"></p>
-      <p class="surah-header-meta" id="surahMeta"></p>
-      <p class="hero-bismillah" id="bismillah" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
-    </div>
-
-    <!-- Ayah list -->
     <ul id="ayahList" class="ayah-list" hidden></ul>
 
   </main>
 
-  <!-- Audio player bar -->
   <div class="audio-bar" id="audioBar" hidden>
     <button class="audio-btn" id="prevAyahBtn" aria-label="Previous Ayah">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 5l-7 7 7 7M8 5v14"/></svg>
@@ -92,6 +79,6 @@
 </div>
 
 <script src="script.js"></script>
-<script src="surah.js"></script>
+<script src="juz.js"></script>
 </body>
 </html>
